@@ -1,0 +1,23 @@
+modLoader="javafml" #mandatory
+loaderVersion="[37,)"license="All rights reserved"
+[[mods]]modId="skills" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Skills Mod" #mandatory
+logoFile="logo.png" #optional
+credits="CrazyOtters for inspiration" #optional
+authors="GreenOne" #optional
+description='''
+This mod adds a much needed skill progression system into Minecraft.
+'''
+[[dependencies.skills]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[37,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.skills]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
