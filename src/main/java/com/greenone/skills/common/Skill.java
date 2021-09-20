@@ -17,8 +17,8 @@ public enum Skill {
     private float experience;
 
     Skill(){
-        level = 0;
-        experience=0;
+        this.level = 0;
+        this.experience=0;
     }
 
     public int getLevel() {
@@ -30,7 +30,7 @@ public enum Skill {
     }
 
     public float getExperience() {
-        return experience;
+        return this.experience;
     }
 
     public void setExperience(float experience) {

@@ -1,6 +1,8 @@
 modLoader="javafml" #mandatory
-loaderVersion="[37,)"license="All rights reserved"
-[[mods]]modId="skills" #mandatory
+license="All rights reserved"
+loaderVersion="[37,)"
+[[mods]]
+modId="skills" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Skills Mod" #mandatory
 logoFile="logo.png" #optional

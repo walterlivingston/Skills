@@ -12,16 +12,15 @@ import net.minecraftforge.common.util.LazyOptional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SkillsCap implements ISkillsCap, INBTSerializable<Tag>, ICapabilityProvider {
     private final LazyOptional<ISkillsCap> instance = LazyOptional.of(() -> this);
-    private List<Skill> skills = new ArrayList<>();
+    private final List<Skill> skills = new ArrayList<>();
 
     public SkillsCap() {
-        for(Skill skill : Skill.values()){
-            skills.add(skill);
-        }
+        skills.addAll(Arrays.asList(Skill.values()));
     }
 
     @Nonnull
@@ -82,6 +81,7 @@ public class SkillsCap implements ISkillsCap, INBTSerializable<Tag>, ICapability
     public void addExperience(Skill skill, float modifier) {
         Skill tempSkill = skills.get(skills.indexOf(skill));
         tempSkill.setExperience((float) (tempSkill.getExperience() + tempSkill.getExperience() * (0.1/tempSkill.getLevel()) * modifier));
+        System.out.println(tempSkill.getExperience());
     }
 
     @Override
