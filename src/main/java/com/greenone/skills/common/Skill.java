@@ -1,5 +1,7 @@
 package com.greenone.skills.common;
 
+import java.util.Locale;
+
 public enum Skill {
 
     MINING,
@@ -12,7 +14,7 @@ public enum Skill {
     FISHING;
 
     private int level;
-    private int experience;
+    private float experience;
 
     Skill(){
         level = 0;
@@ -27,11 +29,15 @@ public enum Skill {
         this.level = level;
     }
 
-    public int getExperience() {
+    public float getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(float experience) {
         this.experience = experience;
+    }
+
+    public String tagName(){
+        return this.name().toLowerCase(Locale.ROOT);
     }
 }
