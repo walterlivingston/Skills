@@ -8,12 +8,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
-import net.minecraftforge.fmlserverevents.FMLServerStoppingEvent;
 
 import javax.annotation.Nullable;
 
@@ -26,15 +26,15 @@ public class SideProxy implements IProxy {
     }
 
     public static void commonSetup(final FMLCommonSetupEvent event){
-        CapabilityRegistry.registerCapabilities();
+        //CapabilityRegistry.registerCapabilities();
     }
 
-    private static void serverStarted(final FMLServerStartingEvent event){
+    private static void serverStarted(final ServerStartingEvent event){
         Skills.LOGGER.info("Server Started");
         server = event.getServer();
     }
 
-    private static void serverStopping(final FMLServerStoppingEvent event){
+    private static void serverStopping(final ServerStoppingEvent event){
         Skills.LOGGER.info("Server Stopping");
         server = null;
     }

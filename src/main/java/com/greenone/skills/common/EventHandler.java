@@ -6,6 +6,7 @@ import com.greenone.skills.common.capabilities.ISkillsCap;
 import com.greenone.skills.common.capabilities.SkillsCap;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,6 +17,11 @@ import java.util.Random;
 @Mod.EventBusSubscriber(modid = Skills.MODID)
 public class EventHandler {
     public static final EventHandler INSTANCE = new EventHandler();
+
+    @SubscribeEvent
+    public void registerCapabilities(final RegisterCapabilitiesEvent event){
+        event.register(ISkillsCap.class);
+    }
 
     @SubscribeEvent
     public void attachCapabilities(final AttachCapabilitiesEvent event) {

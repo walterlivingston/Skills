@@ -80,7 +80,7 @@ public class SkillsCap implements ISkillsCap, INBTSerializable<Tag>, ICapability
     @Override
     public void addExperience(Skill skill, float modifier) {
         Skill tempSkill = skills.get(skills.indexOf(skill));
-        tempSkill.setExperience((float) (tempSkill.getExperience() + tempSkill.getExperience() * (0.1/tempSkill.getLevel()) * modifier));
+        tempSkill.setExperience((float) (tempSkill.getExperience() + 0.1 + tempSkill.getExperience() * (0.1/tempSkill.getLevel()) * modifier));
         System.out.println(tempSkill.getExperience());
     }
 
